@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MAGOZA — Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #7100FF;
+            --accent: #00b4ff;
+            --bg: #071328;
+            --card: #071427;
+            --muted: #9aa4b2;
+            --glass: rgba(255, 255, 255, 0.03);
+            --radius: 14px;
+            --max-w: 1100px;
+            --fs: 14px;
+            color-scheme: dark;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, #071021 0%, #071328 60%);
+            color: #e6eef8;
+            font-size: var(--fs)
+        }
+
+        .container {
+            max-width: var(--max-w);
+            margin: 36px auto;
+            padding: 20px
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 20px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 22px;
+            box-shadow: 0 8px 30px rgba(113, 0, 255, 0.16)
+        }
+
+        h1#appName {
+            margin: 0;
+            font-size: 20px
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 2px
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .lang {
+            display: flex;
+            gap: 8px
+        }
+
+        .lang button {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: inherit;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        .lang button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary)
+        }
+
+        select#fontSize {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 8px 10px;
+            border-radius: 10px;
+            color: inherit;
+            font-weight: 600
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 20px
+        }
+
+        @media (max-width:900px) {
+            main {
+                grid-template-columns: 1fr
+            }
+
+            aside.aside {
+                order: 2
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7)
+        }
+
+        .hero {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 14px
+        }
+
+        .hero .info {
+            flex: 1;
+            min-width: 220px
+        }
+
+        .hero .info h2 {
+            margin: 0 0 6px 0;
+            font-size: 22px
+        }
+
+        .hero .info p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            white-space: pre-wrap
+        }
+
+        .hero .meta {
+            text-align: right;
+            min-width: 120px
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        .color-box {
+            width: 40px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--primary);
+            box-shadow: 0 8px 24px rgba(113, 0, 255, 0.18);
+            margin-top: 8px
+        }
+
+        .sections {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .acc-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent)
+        }
+
+        .acc-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            transition: background 0.15s
+        }
+
+        .acc-head:hover {
+            background: rgba(255, 255, 255, 0.03)
+        }
+
+        .acc-head .toggle-text {
+            font-weight: 600;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .acc-body {
+            padding: 14px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            display: none;
+            color: var(--muted);
+            font-size: 14px;
+            white-space: pre-wrap
+        }
+
+        .acc-body ul {
+            padding-left: 20px;
+            margin: 0;
+            list-style: disc
+        }
+
+        .acc-body ul li {
+            margin-bottom: 8px
+        }
+
+        aside.aside {
+            position: sticky;
+            top: 24px;
+            height: fit-content
+        }
+
+        .meta {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        a {
+            color: var(--muted);
+            text-decoration: none
+        }
+
+        a:hover {
+            color: var(--primary)
+        }
+
+        footer {
+            margin-top: 26px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        @media (max-width:480px) {
+            .container {
+                padding: 14px;
+                margin: 18px auto
+            }
+
+            .logo {
+                width: 48px;
+                height: 48px;
+                font-size: 18px
+            }
+
+            .hero .meta {
+                text-align: left
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" role="main">
+        <header>
+            <div class="brand">
+                <div class="logo" aria-label="MAGOZA logo">
+                    <img src="logo.png" alt="MAGOZA Logo"
+                        style="width:100%;height:100%;border-radius:12px;object-fit:cover;" />
+                </div>
+                <div>
+                    <h1 id="appName">MAGOZA</h1>
+                    <div class="subtitle" id="tagline">Privacy & Data — MAGOZA</div>
+                </div>
+            </div>
+
+            <div class="controls" aria-label="Language and font controls">
+                <nav class="lang" role="tablist" aria-label="Languages">
+                    <button class="lang-btn active" data-lang="uz" role="tab" aria-selected="true"
+                        tabindex="0">UZ</button>
+                    <button class="lang-btn" data-lang="ru" role="tab" aria-selected="false" tabindex="-1">RU</button>
+                    <button class="lang-btn" data-lang="tj" role="tab" aria-selected="false" tabindex="-1">TJ</button>
+                    <button class="lang-btn" data-lang="en" role="tab" aria-selected="false" tabindex="-1">EN</button>
+                </nav>
+                <select id="fontSize" aria-label="Font size">
+                    <option value="14">Normal</option>
+                    <option value="16">Large</option>
+                    <option value="18">XL</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <section class="card content" id="content" aria-live="polite">
+                <div class="hero">
+                    <div class="info">
+                        <h2 id="policyTitle">Privacy Policy</h2>
+                        <p id="policyIntro">This mobile application strives to protect users' personal information.</p>
+                    </div>
+                    <div class="meta">
+                        <div class="badge" id="lastUpdated">Updated: 09.08.2025</div>
+                        <!-- <div class="color-box" aria-hidden="true"></div> -->
+                        <!-- <div class="muted" id=""></div> -->
+                    </div>
+                </div>
+
+                <div class="sections accordion" id="sections" aria-label="Privacy sections">
+                    <!-- injected -->
+                </div>
+            </section>
+
+            <aside class="aside" aria-label="About and quick links">
+                <div class="card meta" id="aboutCard">
+                    <div id="aboutTitle"><strong>About MAGOZA</strong></div>
+                    <div class="muted" id="aboutDesc" style="margin-top:6px;font-size:14px">
+                        A local marketplace app. Privacy-first. Data is <strong>NOT</strong> shared with third parties.
+                    </div>
+
+                    <div style="height:12px;"></div>
+
+                    <div>
+                        <strong id="quickLinksTitle">Quick links</strong>
+                        <div style="margin-top:8px;display:flex;flex-direction:column;gap:8px" id="quickLinks">
+                            <a href="#" id="linkTerms" tabindex="0">Terms of Service</a>
+                            <a href="#" id="linkSupport" tabindex="0">Support</a>
+                            <a href="mailto:mujibalitemiraliyev@gmail.com" id="linkContact" tabindex="0">Contact:
+                                mujibalitemiraliyev@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer id="siteFooter">
+            © <span id="year"></span> MAGOZA — All rights reserved. Data is not shared with third parties.
+        </footer>
+    </div>
+
+    <script>
+        const policy = {
+            appName: "MAGOZA",
+            primaryColor: "#7100FF",
+            lastUpdated: "09.08.2025",
+            texts: {
+                uz: {
+                    tagline: "Smartfoning bormi, ishsizmisan? — MAGOZA ish beradi!",
+                    policyTitle: "Maxfiylik siyosati",
+                    policyIntro: `MAGOZA mobil ilovasi foydalanuvchilarning shaxsiy ma’lumotlarini himoya qilishga intiladi. Ushbu siyosat biz qanday ma’lumotlarni to‘plashimiz, ulardan qanday foydalanishimiz va qanday himoya qilishimiz haqida ma’lumot beradi.`,
+                    collectedTitle: "To‘planadigan ma’lumotlar",
+                    collectedItems: [
+                        "Ism, familiya, elektron pochta manzili, telefon raqami (ro‘yxatdan o‘tishda taqdim etiladi).",
+                        "Foydalanuvchi yuklagan rasmlar va boshqa fayllar.",
+                        // "Geolokatsiya ma’lumotlari (agar foydalanuvchi ruxsat bersa).",
+                        // "Qurilma texnik ma’lumotlari (turi, operatsion tizim, IP manzili va boshqalar)."
+                    ],
+                    usageTitle: "Ma’lumotlardan foydalanish",
+                    usageItems: [
+                        "Xizmatni taqdim etish va yaxshilash uchun.",
+                        "Foydalanuvchilar o‘rtasida muloqot (chat, bildirishnomalar).",
+                        "Texnik yordam va xavfsizlik uchun.",
+                        "Yangi funksiyalar va yangilanishlar haqida xabardor qilish uchun."
+                    ],
+                    sharingTitle: "Ma’lumotlarni ulashish",
+                    sharingItems: [
+
+                        "Xizmatning texnik hamkorlari bilan (masalan, hosting yoki to‘lov tizimlari).",
+                        "Foydalanuvchining roziligi bilan."
+                    ],
+                    sharingExtra: "Ma’lumotlar uchunchi shaxslarga berilmaydi.",
+                    storageTitle: "Ma’lumotlarni saqlash",
+                    storageText: "Ma’lumotlar xavfsiz serverlarda saqlanadi. Biz barcha texnik va tashkiliy choralarni ko‘ramiz, ammo internet orqali ma’lumotlarni 100% xavfsiz uzatishni kafolatlay olmaymiz.",
+                    rightsTitle: "Foydalanuvchi huquqlari",
+                    rightsItems: [
+                        "O‘z ma’lumotlarini ko‘rish, tahrirlash yoki o‘chirish.",
+                        "Ma’lumotlaridan foydalanishni cheklash.",
+                        "Rozilikni istalgan vaqtda qaytarib olish."
+                    ],
+                    changesTitle: "O‘zgarishlar",
+                    changesText: "Biz ushbu maxfiylik siyosatini o‘zgartirish huquqini saqlaymiz. O‘zgarishlar rasmiy veb-saytimizda yoki ilovada e’lon qilinadi.",
+                    contactTitle: "Aloqa",
+                    contactText: "Savollar bo‘lsa, iltimos, biz bilan quyidagi manzil orqali bog‘laning:\n📧 mujibalitemiraliyev@gmail.com",
+                    aboutTitle: "MAGOZA haqida",
+                    aboutDesc: "Mahalliy marketplace ilovasi. Maxfiylik birinchi o‘rinda. Ma’lumotlar uchinchi tomon bilan bo‘lishilmaydi.",
+                    quickLinksTitle: "Tezkor havolalar",
+                    // linkTerms: "Xizmat ko‘rsatish shartlari",
+                    // linkSupport: "Yordam",
+                    linkContact: "Aloqa: mujibalitemiraliyev@gmail.com",
+                    footer: "© {year} MAGOZA — Barcha huquqlar himoyalangan. Ma’lumotlar uchinchi tomon bilan bo‘lishilmaydi.",
+                    open: "Ochish",
+                    close: "Yopish"
+                },
+                ru: {
+                    tagline: "Есть смартфон, без дела сидишь? — MAGOZA даст работу!",
+                    policyTitle: "Политика конфиденциальности",
+                    policyIntro: `Данное мобильное приложение MAGOZA стремится защищать личные данные пользователей. Эта политика объясняет, какие данные мы собираем, как мы их используем и как мы защищаем.`,
+                    collectedTitle: "Собираемые данные",
+                    collectedItems: [
+                        "Имя, фамилия, электронная почта, номер телефона (предоставляются при регистрации).",
+                        "Фотографии и другие файлы, загруженные пользователем.",
+                        // "Данные геолокации (если пользователь разрешает).",
+                        // "Техническая информация устройства (тип, операционная система, IP-адрес и т.д.)."
+                    ],
+                    usageTitle: "Использование данных",
+                    usageItems: [
+                        "Для предоставления и улучшения сервиса.",
+                        "Для общения между пользователями (чат, уведомления).",
+                        "Для технической поддержки и безопасности.",
+                        "Для информирования о новых функциях и обновлениях."
+                    ],
+                    sharingTitle: "Обмен данными",
+                    sharingItems: [
+
+                        "С техническими партнёрами сервиса (например, хостинг или платёжные системы).",
+                        "С согласия пользователя."
+                    ],
+                    sharingExtra: "Данные не передаются третьим лицам.",
+                    storageTitle: "Хранение данных",
+                    storageText: "Данные хранятся на защищённых серверах. Мы принимаем все технические и организационные меры, но не можем гарантировать 100% безопасность передачи данных через интернет.",
+                    rightsTitle: "Права пользователя",
+                    rightsItems: [
+                        "Просмотр, редактирование или удаление своих данных.",
+                        "Ограничение использования своих данных.",
+                        "Отзыв согласия в любое время."
+                    ],
+                    changesTitle: "Изменения",
+                    changesText: "Мы оставляем за собой право изменять эту политику конфиденциальности. Изменения будут объявлены на нашем официальном сайте или в приложении.",
+                    contactTitle: "Контакты",
+                    contactText: "Если у вас есть вопросы, пожалуйста, свяжитесь с нами по адресу:\n📧 mujibalitemiraliyev@gmail.com",
+                    aboutTitle: "О MAGOZA",
+                    aboutDesc: "Местное приложение-маркетплейс. Конфиденциальность на первом месте. Данные НЕ передаются третьим лицам.",
+                    quickLinksTitle: "Быстрые ссылки",
+                    // linkTerms: "Условия обслуживания",
+                    // linkSupport: "Поддержка",
+                    linkContact: "Контакт: mujibalitemiraliyev@gmail.com",
+                    footer: "© {year} MAGOZA — Все права защищены. Данные не передаются третьим лицам.",
+                    open: "Открыть",
+                    close: "Закрыть"
+                },
+                tj: {
+                    tagline: "Смартфон дорӣ, бекорӣ?” — MAGOZA кор медиҳад!",
+                    policyTitle: "Сиёсати махфият",
+                    policyIntro: `Барномаи мобилии MAGOZA барои ҳифзи маълумоти шахсии корбарон талош мекунад. Ин сиёсати махфият маълум мекунад, ки мо чӣ маълумот ҷамъ мекунем, чӣ гуна истифода мебарем ва чӣ гуна ҳифз мекунем.`,
+                    collectedTitle: "Маълумоти ҷамъшуда",
+                    collectedItems: [
+                        "Ном, насаб, почтаи электронӣ, рақами телефон, ки ҳангоми сабти ном дода мешаванд.",
+                        "Суратҳо ва дигар файлҳое, ки корбар бор мекунад.",
+                        // "Маълумоти геолокация (агар корбар иҷозат диҳад).",
+                        // "Маълумоти техникии дастгоҳ (намуд, системаи оператсионӣ, суроғаи IP ва ғайра)."
+                    ],
+                    usageTitle: "Истифодаи маълумот",
+                    usageItems: [
+                        "Пешкаш кардан ва беҳтар кардани хизматрасонӣ.",
+                        "Муошират байни корбарон (чат, огоҳиномаҳо).",
+                        "Дастгирии техникӣ ва амният.",
+                        "Огоҳ кардан дар бораи функсияҳои нав ва навсозӣ."
+                    ],
+                    sharingTitle: "Муҳрабо ва мубодила",
+                    sharingItems: [
+
+                        "Бо шарикони техникии хизмат (масалан, хостинг ё системаҳои пардохт).",
+                        "Бо розигии корбар."
+                    ],
+                    sharingExtra: "Маълумотҳо ба тарафи сеюм дода намешаванд.",
+                    storageTitle: "Нигоҳдории маълумот",
+                    storageText: "Маълумот дар серверҳои бехатар нигоҳ дошта мешаванд. Мо тамоми чораҳои техникию ташкилотиро меандешем, вале 100% бехатарии маълумотҳои интиқолёбандаро дар интернет кафолат дода намешавад.",
+                    rightsTitle: "Ҳуқуқҳои корбар",
+                    rightsItems: [
+                        "Маълумоташро бинед, таҳрир кунед ё ҳазф кунед.",
+                        "Истифодаи маълумоташро маҳдуд созад.",
+                        "Дар ҳар вақт розигии худро бозпас гирад."
+                    ],
+                    changesTitle: "Тағйирот",
+                    changesText: "Мо ҳақ дорем, ки ин сиёсати махфиятро тағйир диҳем. Тағйирот дар барнома ё вебсайти расмии мо эълон мешавад.",
+                    contactTitle: "Тамос",
+                    contactText: "Агар саволе дошта бошед, лутфан бо мо тавассути суроғаи зер тамос гиред:\n📧 mujibalitemiraliyev@gmail.com",
+                    aboutTitle: "Дар бораи MAGOZA",
+                    aboutDesc: "Барномаи маҳаллии marketplace. Махфият дар аввал. Маълумотҳо ба тарафҳои сеюм дода намешавад.",
+                    quickLinksTitle: "Пайвандҳои зуд",
+                    // linkTerms: "Шартҳои хизмат",
+                    // linkSupport: "Дастгирӣ",
+                    linkContact: "Тамос: mujibalitemiraliyev@gmail.com",
+                    footer: "© {year} MAGOZA — Ҳама ҳуқуқҳо ҳифз шудаанд. Маълумотҳо ба тарафи сеюм дода намешавад.",
+                    open: "Кушодан",
+                    close: "Пӯшидан"
+                },
+                en: {
+                    tagline: "Got a smartphone and free time? — MAGOZA will give you a job!",
+                    policyTitle: "Privacy Policy",
+                    policyIntro: `This mobile application MAGOZA strives to protect users' personal information. This policy explains what data we collect, how we use it, and how we protect it.`,
+                    collectedTitle: "Data Collected",
+                    collectedItems: [
+                        "Name, surname, email address, phone number (provided during registration).",
+                        "Photos and other files uploaded by the user.",
+                        // "Geolocation data (if user permits).",
+                        // "Technical device info (type, OS, IP address, etc.)."
+                    ],
+                    usageTitle: "Use of Data",
+                    usageItems: [
+                        "To provide and improve the service.",
+                        "Communication between users (chat, notifications).",
+                        "Technical support and security.",
+                        "To notify about new features and updates."
+                    ],
+                    sharingTitle: "Sharing Data",
+                    sharingItems: [
+
+                        "With technical service partners (e.g., hosting or payment systems).",
+                        "With user consent."
+                    ],
+                    sharingExtra: "Data is not shared with third parties.",
+                    storageTitle: "Data Storage",
+                    storageText: "Data is stored on secure servers. We take all technical and organizational measures but cannot guarantee 100% data transmission security over the internet.",
+                    rightsTitle: "User Rights",
+                    rightsItems: [
+                        "View, edit, or delete their data.",
+                        "Restrict use of their data.",
+                        "Withdraw consent at any time."
+                    ],
+                    changesTitle: "Changes",
+                    changesText: "We reserve the right to change this privacy policy. Changes will be announced on our official website or app.",
+                    contactTitle: "Contact",
+                    contactText: "If you have questions, please contact us at:\n📧 mujibalitemiraliyev@gmail.com",
+                    aboutTitle: "About MAGOZA",
+                    aboutDesc: "A local marketplace app. Privacy-first. Data is NOT shared with third parties.",
+                    quickLinksTitle: "Quick links",
+                    // linkTerms: "Terms of Service",
+                    // linkSupport: "Support",
+                    linkContact: "Contact: mujibalitemiraliyev@gmail.com",
+                    footer: "© {year} MAGOZA — All rights reserved. Data is not shared with third parties.",
+                    open: "Open",
+                    close: "Close"
+                }
+            }
+        };
+
+        // Element refs
+        const langButtons = document.querySelectorAll(".lang-btn");
+        const sectionsEl = document.getElementById("sections");
+        const appNameEl = document.getElementById("appName");
+        const taglineEl = document.getElementById("tagline");
+        const lastUpdatedEl = document.getElementById("lastUpdated");
+        const policyTitleEl = document.getElementById("policyTitle");
+        const fontSizeSelect = document.getElementById("fontSize");
+        const aboutTitleEl = document.getElementById("aboutTitle");
+        const aboutDescEl = document.getElementById("aboutDesc");
+        const quickLinksTitleEl = document.getElementById("quickLinksTitle");
+        const linkTermsEl = document.getElementById("linkTerms");
+        const linkSupportEl = document.getElementById("linkSupport");
+        const linkContactEl = document.getElementById("linkContact");
+        const siteFooterEl = document.getElementById("siteFooter");
+        const yearSpan = document.getElementById("year");
+        yearSpan.textContent = new Date().getFullYear();
+
+        let currentLang = "uz";
+
+        // Accordion toggle
+        function toggleAccordion(e) {
+            const head = e.currentTarget;
+            const body = head.nextElementSibling;
+            const isOpen = body.style.display === "block";
+
+            // close all
+            document.querySelectorAll(".acc-body").forEach(b => {
+                b.style.display = "none";
+                b.previousElementSibling.setAttribute("aria-expanded", "false");
+                b.previousElementSibling.querySelector(".toggle-text").textContent = policy.texts[currentLang].open;
+            });
+
+            if (!isOpen) {
+                body.style.display = "block";
+                head.setAttribute("aria-expanded", "true");
+                head.querySelector(".toggle-text").textContent = policy.texts[currentLang].close;
+            } else {
+                body.style.display = "none";
+                head.setAttribute("aria-expanded", "false");
+                head.querySelector(".toggle-text").textContent = policy.texts[currentLang].open;
+            }
+        }
+
+        // Build accordion sections from translations
+        function buildSections(lang) {
+            sectionsEl.innerHTML = "";
+            const t = policy.texts[lang];
+
+            function addSection(title, items, extra) {
+                const item = document.createElement("div"); item.className = "acc-item";
+
+                const head = document.createElement("div"); head.className = "acc-head"; head.tabIndex = 0;
+                head.setAttribute("role", "button"); head.setAttribute("aria-expanded", "false");
+                head.addEventListener("click", toggleAccordion);
+                head.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggleAccordion({ currentTarget: head }); } });
+
+                const titleEl = document.createElement("div"); titleEl.textContent = title;
+                const toggleText = document.createElement("div"); toggleText.className = "toggle-text"; toggleText.textContent = t.open;
+
+                head.appendChild(titleEl); head.appendChild(toggleText);
+
+                const body = document.createElement("div"); body.className = "acc-body";
+
+                if (Array.isArray(items)) {
+                    const ul = document.createElement("ul");
+                    items.forEach(i => {
+                        const li = document.createElement("li"); li.textContent = i; ul.appendChild(li);
+                    });
+                    body.appendChild(ul);
+                } else {
+                    const p = document.createElement("p"); p.textContent = items; body.appendChild(p);
+                }
+
+                if (extra) {
+                    const pEx = document.createElement("p"); pEx.style.marginTop = "8px"; pEx.style.fontStyle = "italic"; pEx.style.color = "var(--primary)"; pEx.textContent = extra; body.appendChild(pEx);
+                }
+
+                item.appendChild(head); item.appendChild(body); sectionsEl.appendChild(item);
+            }
+
+            addSection(t.collectedTitle, t.collectedItems);
+            addSection(t.usageTitle, t.usageItems);
+            addSection(t.sharingTitle, t.sharingItems, t.sharingExtra);
+            addSection(t.storageTitle, t.storageText);
+            addSection(t.rightsTitle, t.rightsItems);
+            addSection(t.changesTitle, t.changesText);
+            addSection(t.contactTitle, t.contactText);
+        }
+
+        // Update UI texts based on language
+        function updateContent(lang) {
+            currentLang = lang;
+            const t = policy.texts[lang];
+            appNameEl.textContent = policy.appName;
+            taglineEl.textContent = t.tagline;
+            policyTitleEl.textContent = t.policyTitle;
+            document.getElementById("policyIntro").textContent = t.policyIntro;
+            lastUpdatedEl.textContent = (lang === "ru" ? "Обновлено: " : (lang === "tj" ? "Навсозии охирин: " : (lang === "en" ? "Updated: " : "Yangilangan: "))) + policy.lastUpdated;
+            // document.getElementById("primaryColorLabel").textContent = (lang === "ru" ? "Основной цвет" : (lang === "tj" ? "Ранги асосӣ" : (lang === "en" ? "Primary color" : "Asosiy rang")));
+            // About & quick links
+            aboutTitleEl.textContent = t.aboutTitle;
+            aboutDescEl.innerHTML = t.aboutDesc.includes("<strong>") ? t.aboutDesc : escapeHtml(t.aboutDesc).replace(/\n/g, '<br>');
+            quickLinksTitleEl.textContent = t.quickLinksTitle;
+            linkTermsEl.textContent = t.linkTerms;
+            linkSupportEl.textContent = t.linkSupport;
+            linkContactEl.textContent = t.linkContact;
+            // Footer (replace {year})
+            siteFooterEl.innerHTML = t.footer.replace("{year}", new Date().getFullYear());
+            // rebuild sections
+            buildSections(lang);
+        }
+
+        // Utility to escape plain text to safe HTML (used if needed)
+        function escapeHtml(text) {
+            return text.replace(/[&<>"']/g, function (m) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#39;" })[m]; });
+        }
+
+        // Language buttons handlers
+        langButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                langButtons.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); b.tabIndex = -1; });
+                btn.classList.add("active"); btn.setAttribute("aria-selected", "true"); btn.tabIndex = 0;
+                updateContent(btn.dataset.lang);
+            });
+        });
+
+        // Font size control
+        fontSizeSelect.addEventListener("change", e => { document.documentElement.style.fontSize = e.target.value + "px"; });
+
+        // Init
+        updateContent(currentLang);
+    </script>
+</body>
+
+</html>

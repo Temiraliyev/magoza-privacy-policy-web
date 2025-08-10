@@ -1,0 +1,49 @@
+/* Asosiy layout: desktop uchun ikki ustun */
+main {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* Asosiy content va sidebar */
+  gap: 24px;
+}
+
+/* Ekran kengligi 900px dan kichik bo‘lsa: bitta ustunga o‘tadi */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr; /* Faqat bitta ustun */
+  }
+
+  aside.aside {
+    order: 2; /* Sidebar asosiy kontentdan keyin chiqadi */
+  }
+}
+
+/* Juda kichik ekranlar uchun: 480px dan kichik bo‘lsa */
+@media (max-width: 480px) {
+  .container {
+    padding: 14px 12px;
+    margin: 20px auto 50px;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  h1#appName {
+    font-size: 20px;
+  }
+
+  .hero .info {
+    flex: 1 1 100%; /* To‘liq kenglik */
+  }
+
+  .hero .meta {
+    min-width: auto;
+    text-align: left;
+    margin-top: 16px;
+  }
+
+  main {
+    gap: 16px; /* Oraliqni kamaytirish */
+  }
+}
